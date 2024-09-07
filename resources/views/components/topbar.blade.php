@@ -4,7 +4,7 @@
     }
 </style>
 
-<nav class="topbar navbar navbar-expand-lg bg-primary text-white">
+<nav class="topbar navbar navbar-expand-lg bg-primary navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">메뉴</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -14,13 +14,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/chat">채팅</a>
+                    <a class="nav-link {{ Request::is('chat') ? 'active' : '' }}" href="/chat">채팅</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/streaming">스트리밍</a>
+                    <a class="nav-link {{ Request::is('streaming') ? 'active' : '' }}" href="/streaming">스트리밍</a>
                 </li>
             </ul>
             @auth

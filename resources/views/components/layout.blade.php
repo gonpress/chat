@@ -1,7 +1,3 @@
-@php
-    $isFullPage = $isFullPage ?? false;
-@endphp
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -31,13 +27,6 @@
     <div class="my-container">
         <x-topbar />
         <div class="content">
-            @if (!$isFullPage)
-                <x-sidebar>
-                    <x-slot name="sidebar">
-                        {{ $sidebar ?? '' }}
-                    </x-slot>
-                </x-sidebar>
-            @endif
             <x-main>
                 {{ $slot }}
             </x-main>

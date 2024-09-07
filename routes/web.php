@@ -3,14 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Livewire\Chat;
 
 Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/chat', function () {
-    return view('chat');
-});
+Route::get('/chat', Chat::class);
 
 Route::get('/streaming', function () {
     return view('streaming');
